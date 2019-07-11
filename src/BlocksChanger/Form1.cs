@@ -22,7 +22,11 @@ namespace BlocksChanger
         private void mainMap_Click(object sender, EventArgs e)
         {
             MouseEventArgs me = (MouseEventArgs)e;
-            en.boxes.CLICK(en, me.Location);
+            
+            if(!pause)
+            {
+                en.boxes.CLICK(en, me.Location);
+            }
         }
 
         private void mainMap_MouseMove(object sender, MouseEventArgs e)
@@ -34,30 +38,46 @@ namespace BlocksChanger
         {
             if (e.KeyCode == Keys.Enter)
             {
-                loop.Start();
-                loop.Interval = 200;
+                if(!started)
+                {
+                    loop.Start();
+                    loop.Interval = 200;
+                    started = true;
+
+                }
+                else
+                {
+                    pause = !pause;
+                }
             }
 
-            en.boxes.KEYPRESS(en, e);
+            if(!pause)
+            {
+                en.boxes.KEYPRESS(en, e);
+            }
         }
 
         static int at = 0;
-        static bool pause = true;
+        static bool pause = false;
+        static bool started = false;
 
         private void loop_Tick(object sender, EventArgs e)
         {
 
-            en.C();
-            en.boxes.DRAW(en);
-
-            en.boxes.FALL(en);
-
-            if (at % 9 == 0)
+            if(!pause)
             {
-                en.boxes.generateEnemy();
-            }
+                en.C();
+                en.boxes.DRAW(en);
 
-            at++;
+                en.boxes.FALL(en);
+
+                if (at % 9 == 0)
+                {
+                    en.boxes.generateEnemy();
+                }
+
+                at++;
+            }
 
         }
     }

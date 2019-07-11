@@ -1,22 +1,14 @@
-# wfa-blockschanger
-simple game - like just red blocks falling from sky and there is no sky and you have to collect them or, or nothing
+This was meant to be some game. It's made in `Windows Forms Application` with `c#`. Right now there is no condition to end the game or any goal.
+ - Press `Enter` to start the game.
+ - Press `Enter` again to toggle pause/playe.
+ - Use `Arrows` to move around.
+ - Press `Right Click`  to speed up red blocks.
 
-</br>
-</br>
+This is how it looks:
 
----
+<p align="center">
+	<img src="https://i.imgur.com/evBuP6H.gif" alt="preview">
+</p>
 
- ### code here
-  - [Looking for code?](src/BlocksChanger)
-  
-----
-
- ### pictures here
-  - [Looking for pics?](prev/)
-
-----
-
-</br>
-</br>
-
-`June 2018 - Visual Studio Community 2017`
+ - [Code Here!](https://github.com/space-hound/wfa-blockschanger/tree/master/src/BlocksChanger)
+ - [Images Here!](https://github.com/space-hound/wfa-blockschanger/tree/master/prev)
